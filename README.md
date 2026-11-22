@@ -20,6 +20,11 @@ YOLOv8n을 최대 50에포크로 설정해 학습했습니다.
 - 전체 mAP50 80.8%
 - 전체 mAP50–95 58.6%
 
+## 객체 추적 영상  
+
+https://github.com/user-attachments/assets/1c7a29c5-32e7-418d-a7ff-e7ecd20b03e9
+
+
 ## 실행
 
 Ultralytics가 설치된 Python 환경에서 사용합니다.

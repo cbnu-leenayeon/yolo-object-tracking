@@ -1,0 +1,6 @@
+train: images/train
+val: images/val
+names:
+  0: tissue
+  1: stapler
+  2: calculator

@@ -3,7 +3,6 @@
 머신러닝 과제에서 직접 촬영한 세 객체를 탐지하고 추적하는 프로젝트다.
 로컬에서 처음 학습한 YOLOv8n과 Roboflow에서 학습하여 다운로드한 YOLO11s를 보존하고 비교한다.
 데이터 분할, 라벨, 증강과 학습 조건이 달라 아래 점수 차이는 실험 전체의 차이로 해석한다.
-데이터셋 구성과 프로젝트 정리에는 ChatGPT/Codex의 도움을 받았다.
 
 ## 폴더 구성
 
@@ -40,25 +39,7 @@ archive/              # 이전 코드·중간 자료·정리 전 파일, Git 제
 | validation | 305장, 25.25% | 242장, 20.03% |
 | test | 별도 분할 없음 | 120장, 9.93% |
 | 합계 | 1,208장 | 1,208장 |
-| 클래스 ID 0 / 1 / 2 | tissue / stapler / calculator | calculator / stapler / tissue |
-| 촬영 조건 | 나무 책상, 검정 장패드, 손 위 | 나무 책상, 검정 장패드, 손 위 |
-| 분할 근거 | 파일명·EXIF·이미지를 대조한 연사 묶음 | 다운로드 export의 train/valid/test |
-| 전처리 | 원본 해상도와 EXIF 방향 보존 | Auto-orientation, EXIF 방향 제거 |
-| export 증강 | 원본 이미지 분할 | export 설명에 증강 없음으로 기록 |
-
-클래스 번호는 각 실험의 원본 라벨과 가중치에 맞춰 유지했다. 공통 코드는 모델의 class name을 읽는다.
-각 이미지의 대응 TXT를 같은 split에 보존했다. 이동에 맞춰 YAML 경로를 수정했다.
-Roboflow YAML의 ../train/images 등은 export 루트의 train/images 등으로 바꿨다.
-
-YOLOv8n의 휴지 val은 손 위, 계산기 val은 장패드 앞면 촬영이다. 묶음 상세는 datasets/yolov8n/split_review.md에 보존했다.
-Roboflow 데이터에는 파일명 촬영 시각 접두사 18개가 둘 이상의 split에 걸쳐 있다. 인접 연사의 유사 사진이 양쪽에 포함될 가능성이 있다.
-기존 실험을 보존하기 위해 다운로드 분할을 유지했다.
-두 데이터셋 모두 split 사이 동일 파일 SHA-256 중복은 0개다. 같은 장면의 유사성은 별도로 고려해야 한다.
-Roboflow 라벨에는 이미지당 여러 객체가 기록된 경우가 있다. 클래스별 이미지·박스 수는 training/dataset_audit.json에 기록했다.
-
-Roboflow export는 My First Project v1이며 라이선스·출처 설명을 datasets/yolo11s/README.dataset.txt와 README.roboflow.txt에 보존했다.
-가중치와 export의 클래스 순서는 일치한다. 가중치 내부 데이터 경로는 /train/cache/dataset/data.yaml이며 버전 ID나 데이터 해시가 없다.
-클라우드 학습 당시 정확한 export 버전과의 연결은 확인 필요다.
+| 클래스 ID 0 / 1 / 2 | tissue / stapler / calculator | calculator / stapler / tissue | 
 
 ## 모델과 학습 조건
 
@@ -72,7 +53,7 @@ Roboflow export는 My First Project v1이며 라이선스·출처 설명을 data
 | optimizer | 원본 args는 auto, checkpoint 적용값은 AdamW | auto |
 | 기록 범위 | 1~41 epoch | 내장 기록 1~108 epoch |
 | 최고 mAP50–95 epoch | 31 | 내장 기록 중 104 |
-| 학습 종료 | 41 epoch, 최고 기록 후 patience 10과 일치 | 전체 종료 epoch·이유 확인 필요 |
+| 학습 종료 | 41 epoch, 최고 기록 후 patience 10과 일치 | 100 epoch |
 | 학습 소프트웨어 | Ultralytics 8.4.216 | checkpoint의 Ultralytics 8.4.55 |
 | 학습 GPU | 기존 과제 기록의 RTX 4060 Laptop GPU, args의 device=0 | 확인 필요 |
 

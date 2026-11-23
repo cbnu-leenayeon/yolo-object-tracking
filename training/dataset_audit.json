@@ -1,0 +1,75 @@
+{
+  "yolov8n": {
+    "train": {
+      "images": 903,
+      "class_image_counts": {
+        "0": 202,
+        "1": 353,
+        "2": 348
+      },
+      "box_counts": {
+        "0": 202,
+        "1": 353,
+        "2": 348
+      }
+    },
+    "val": {
+      "images": 305,
+      "class_image_counts": {
+        "0": 101,
+        "1": 109,
+        "2": 95
+      },
+      "box_counts": {
+        "0": 101,
+        "1": 109,
+        "2": 95
+      }
+    },
+    "cross_split_identical_files": 0,
+    "filename_prefixes_in_multiple_splits": 0
+  },
+  "yolo11s": {
+    "train": {
+      "images": 846,
+      "class_image_counts": {
+        "2": 339,
+        "1": 333,
+        "0": 306
+      },
+      "box_counts": {
+        "2": 467,
+        "1": 333,
+        "0": 306
+      }
+    },
+    "valid": {
+      "images": 242,
+      "class_image_counts": {
+        "2": 97,
+        "1": 93,
+        "0": 87
+      },
+      "box_counts": {
+        "2": 138,
+        "1": 93,
+        "0": 87
+      }
+    },
+    "test": {
+      "images": 120,
+      "class_image_counts": {
+        "2": 46,
+        "1": 36,
+        "0": 50
+      },
+      "box_counts": {
+        "2": 58,
+        "1": 36,
+        "0": 50
+      }
+    },
+    "cross_split_identical_files": 0,
+    "filename_prefixes_in_multiple_splits": 18
+  }
+}

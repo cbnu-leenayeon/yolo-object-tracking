@@ -1,0 +1,10 @@
+{
+  "metrics/precision(B)": 0.97661,
+  "metrics/recall(B)": 0.97826,
+  "metrics/mAP50(B)": 0.99153,
+  "metrics/mAP50-95(B)": 0.96611,
+  "val/box_loss": 0.22832,
+  "val/cls_loss": 0.21282,
+  "val/dfl_loss": 0.79154,
+  "fitness": 0.96611
+}

@@ -1,0 +1,30 @@
+{
+  "model": "weights/yolo11s/best.pt",
+  "source": "videos/input/test_video.mp4",
+  "name": "full",
+  "output_dir": "results/yolo11s",
+  "seconds": 0.0,
+  "tracker": "botsort.yaml",
+  "conf": 0.1,
+  "imgsz": 640,
+  "device": "0",
+  "no_preview": true,
+  "ultralytics_version": "8.4.216",
+  "fps": 30.0,
+  "model_sha256": "1d1fbdda41833a0b79b117d1b3042f674a548b4515a6721304f3813de90dbe96",
+  "source_sha256": "a8416ef1b7225986466b0dd3ede4a6194c0a41acd7da7b43c3730ceb28915321",
+  "class_names": {
+    "0": "calculator",
+    "1": "stapler",
+    "2": "tissue"
+  },
+  "timestamp_note": "time_seconds is frame_index / source FPS; nominal for variable-FPS sources",
+  "notes": "Video is silent. Tracker IDs are not forced or relabeled. CSV is a prediction log.",
+  "status": "completed",
+  "processed_frames": 368,
+  "saved_seconds": 12.266666666666667,
+  "stop_reason": "source_end",
+  "original_run": "runs/track/yolo11s_full",
+  "result_video_sha256": "028e8b8b5ed1cb62a4f4d1121c364a43e61b717ab7f3e88ca8bb6f37dd881a5c",
+  "trajectory_csv_sha256": "04dcf23a946796640510d97ebbd438a4b2f8fee6ed0ec370abe838bda092f050"
+}

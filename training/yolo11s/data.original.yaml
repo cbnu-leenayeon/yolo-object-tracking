@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 3
+names: ['calculator', 'stapler', 'tissue']
+
+roboflow:
+  workspace: s-workspace-iybki
+  project: my-first-project-kqe4e
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/s-workspace-iybki/my-first-project-kqe4e/dataset/1

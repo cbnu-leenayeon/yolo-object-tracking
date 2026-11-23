@@ -1,0 +1,12 @@
+{
+  "eligible_videos": [
+    "results/yolo11s/5s/tracking.mp4",
+    "results/yolo11s/full/tracking.mp4",
+    "results/yolov8n/5s/tracking.mp4",
+    "results/yolov8n/full/tracking.mp4",
+    "videos/input/test_video.mp4"
+  ],
+  "numbered_inputs_ignored": true,
+  "old_result_videos_ignored": true,
+  "datasets_still_included": true
+}

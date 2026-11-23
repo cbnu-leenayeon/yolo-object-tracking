@@ -1,0 +1,9 @@
+{
+  "export_folder": "My First Project.v1i.yolov11",
+  "dataset_project": "s-workspace-iybki/my-first-project-kqe4e",
+  "version": 1,
+  "downloaded_weight_original": "weights/roboflow_yolo11s.pt",
+  "identical_duplicate": "weights.pt",
+  "checkpoint_sha256": "1d1fbdda41833a0b79b117d1b3042f674a548b4515a6721304f3813de90dbe96",
+  "dataset_version_binding": "확인 필요. 체크포인트 data는 /train/cache/dataset/data.yaml이며 버전 ID나 데이터 해시는 포함되지 않음. 클래스 순서와 로컬 다운로드 자료는 대응함."
+}

@@ -1,0 +1,38 @@
+{
+  "model": "weights/yolov8n/best.pt",
+  "source": "videos/input/test_video.mp4",
+  "name": "5s",
+  "output_dir": "results/yolov8n",
+  "seconds": 5.0,
+  "tracker": "botsort.yaml",
+  "conf": 0.1,
+  "imgsz": 640,
+  "device": "0",
+  "no_preview": true,
+  "ultralytics_version": "8.4.216",
+  "fps": 30.0,
+  "model_sha256": "2ed77a78095ce6e9ed9e19a5ce27003c2a52d0b3236a4c0a32794e6dce7edee5",
+  "source_sha256": "a8416ef1b7225986466b0dd3ede4a6194c0a41acd7da7b43c3730ceb28915321",
+  "class_names": {
+    "0": "tissue",
+    "1": "stapler",
+    "2": "calculator"
+  },
+  "timestamp_note": "time_seconds is frame_index / source FPS; nominal for variable-FPS sources",
+  "notes": "Video is silent. Tracker IDs are not forced or relabeled. CSV is a prediction log.",
+  "status": "completed",
+  "processed_frames": 150,
+  "saved_seconds": 5.0,
+  "stop_reason": "derived_clip_duration",
+  "derivation": {
+    "operation": "First 150 prediction-video frames decoded and re-encoded with OpenCV mp4v; original 30 FPS",
+    "input_prediction_video": "runs/track/yolov8n_full/tracking.mp4",
+    "input_prediction_sha256": "7e00597a71514f08a12db9dc9929c355bd973a6cf9c3a0aa67c0585a2b1ff779",
+    "csv_operation": "Original rows with frame_index < 150, preserving values and native track IDs",
+    "reason": "runs/track/yolov8n_5s contained only 7 frames and had no completed status",
+    "new_model_inference_executed": false
+  },
+  "original_run": "runs/track/yolov8n_full",
+  "result_video_sha256": "c547178e421afe9c27710fb6be84271612932d731892896df698dea5b7e4cb17",
+  "trajectory_csv_sha256": "a8db256aebe62d9dcac289fd24c1702cfe524b387d53cb75ec6b499286ebd2d3"
+}

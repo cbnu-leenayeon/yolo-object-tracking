@@ -5,15 +5,23 @@
 
 ## 결과 영상
 
-두 모델 모두 같은 [원본 영상](videos/input/test_video.mp4)(1920×1080, 30 FPS, 368프레임, 약 12.27초)을 처리했다.
+두 모델 모두 같은 원본 영상 `videos/input/test_video.mp4`(1920×1080, 30 FPS, 368프레임, 약 12.27초)을 처리했다.
 추적 조건은 BoT-SORT, `conf=0.1`, `imgsz=640`으로 동일하다.
+아래는 README 재생용 H.264 압축본이며, 원본 해상도·FPS·전체 프레임 수를 유지했다.
 
-| 모델 | 제출용 5초 영상 | 전체 영상 | 전체 좌표 기록 |
-|---|---|---|---|
-| YOLOv8n | [영상](results/yolov8n/5s/tracking.mp4) | [영상](results/yolov8n/full/tracking.mp4) | [CSV](results/yolov8n/full/trajectories.csv) |
-| YOLO11s | [영상](results/yolo11s/5s/tracking.mp4) | [영상](results/yolo11s/full/tracking.mp4) | [CSV](results/yolo11s/full/trajectories.csv) |
+### 로컬 YOLOv8n — 전체 영상
 
-YOLOv8n의 5초 영상과 CSV는 완료된 전체 결과의 앞 150프레임에서 추출했다.
+https://github.com/user-attachments/assets/c56f98c1-1069-4c3a-b155-6f248468e251
+
+[전체 좌표 CSV](results/yolov8n/full/trajectories.csv) · [실행 설정](results/yolov8n/full/run_config.json)
+
+### Roboflow YOLO11s — 전체 영상
+
+https://github.com/user-attachments/assets/11196943-88c3-4591-9c1f-0d96eebb81f1
+
+[전체 좌표 CSV](results/yolo11s/full/trajectories.csv) · [실행 설정](results/yolo11s/full/run_config.json)
+
+README에는 전체 영상만 표시하며, 제출용 5초·전체 결과 영상과 CSV는 `results/`에 보존했다.
 각 결과 폴더의 `run_config.json`에 실행 설정과 생성 경위를 기록했다.
 
 ## 데이터와 학습 방법

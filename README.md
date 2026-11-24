@@ -7,7 +7,6 @@
 
 두 모델 모두 같은 원본 영상 `videos/input/test_video.mp4`(1920×1080, 30 FPS, 368프레임, 약 12.27초)을 처리했다.
 추적 조건은 BoT-SORT, `conf=0.1`, `imgsz=640`으로 동일하다.
-아래는 README 재생용 H.264 압축본이며, 원본 해상도·FPS·전체 프레임 수를 유지했다.
 
 ### 로컬 YOLOv8n — 전체 영상
 
@@ -31,7 +30,7 @@ README에는 전체 영상만 표시하며, 제출용 5초·전체 결과 영상
 | 항목 | 로컬 YOLOv8n | Roboflow YOLO11s |
 |---|---|---|
 | train / validation / test | 903 / 305 / 별도 없음 | 846 / 242 / 120 |
-| 데이터 준비 | GPT 보조, 연사 묶음 단위 분할 | 자동 라벨링, 70/20/10% 비율 분할 |
+| 데이터 준비 | GPT 라벨링 보조 | 자동 라벨링, 70/20/10% 비율 분할 |
 | 클래스 ID 0 / 1 / 2 | tissue / stapler / calculator | calculator / stapler / tissue |
 | 설정상 최대 epoch | 50 | 300 |
 | 저장된 epoch 기록 / 최고 mAP50–95 epoch | 41 / 31 | 108 / 104 |
@@ -85,14 +84,6 @@ python track_video_assignment.py --model weights/yolo11s/best.pt --name yolo11s_
 
 YOLOv8n 설정 기반 재학습: `python training/yolov8n/train.py --device 0`.
 이 코드는 저장된 설정으로 나중에 구성한 재현용 코드이며 최초 학습 원본은 아니다. YOLO11s는 Roboflow 웹에서 학습했다.
-
-## 결과 관찰과 한계
-
-두 모델 모두 일부 구간에서 같은 물체의 추적 ID가 바뀌거나 탐지가 끊겼다.
-표본 영상에서는 주변 물체까지 포함한 박스와, 손에 가려져 축소된 박스도 관찰되었다.
-**클래스를 올바르게 탐지하는 것과 동일 객체의 ID를 유지하는 것은 별개의 성능이다.**
-ID는 강제로 고정하지 않았으며, 관측이 끊긴 구간의 궤적은 연결하지 않는다.
-CSV는 예측 기록이고, 프레임별 정답 궤적이 없어 정확한 ID-switch 수나 영상 recall은 평가하지 않았다.
 
 ## 제출 자료 위치
 
